@@ -27,7 +27,8 @@ void CrArrayDouble(double[,] array)
   }
 }
 
-void WriteArray (double[,] array){
+void WriteArray (double[,] array)
+{
 for (int i = 0; i < m; i++)
   {
       for (int j = 0; j < n; j++)
@@ -45,10 +46,10 @@ string? positionElement = Console.ReadLine();
 positionElement = RemovingSpaces(positionElement);
 int[] position = ParserString(positionElement);
 
-if(position[0] <= m 
-&& position[1] <= n 
-&& position[0] >= 0 
-&& position[1] >= 0) 
+if (position[0] <= m 
+    && position[1] <= n 
+    && position[0] >= 0 
+    && position[1] >= 0) 
 {
   double result = array[position[0]-1, position[1]-1];
   Console.Write($"Значение элемента: {result}");
