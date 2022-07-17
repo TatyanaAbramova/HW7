@@ -1,12 +1,12 @@
 ﻿// Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
-//и возвращает значение этого элемента или же указание, что такого элемента нет.
+//и возвращает значение этого элемента или же указывает, что такого элемента нет.
 
 Console.Write("Введите m: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-Console.Clear();
+//Console.Clear();
 Console.WriteLine($"m = {m}, n = {n}.");
 Console.WriteLine();
 
@@ -42,9 +42,9 @@ for (int i = 0; i < m; i++)
 
 Console.Write("Введите координаты позиции элемента, разделенных запятой: ");
 
-string? positionElement = Console.ReadLine();
-positionElement = RemovingSpaces(positionElement);
-int[] position = ParserString(positionElement);
+string? posEl = Console.ReadLine();
+posEl = RemovingSpaces(posEl);
+int[] position = ParserString(posEl);
 
 if (position[0] <= m 
     && position[1] <= n 
@@ -52,8 +52,9 @@ if (position[0] <= m
     && position[1] >= 0) 
 {
   double result = array[position[0]-1, position[1]-1];
+  result = Math.Round(result, 2);
   Console.Write($"Значение элемента: {result}");
-}
+  }
 else Console.Write($"такого элемента в массиве нет.");
 
 int[] ParserString(string input)
@@ -97,4 +98,4 @@ string RemovingSpaces (string input)
     }
   }
   return output;
-}
+} 
